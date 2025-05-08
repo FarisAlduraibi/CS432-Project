@@ -9,11 +9,10 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 # Load the dataset
 data = pd.read_csv('student-mat.csv', sep=';')
 
-# Select relevant features
-features = ['studytime', 'failures', 'absences', 'G1', 'G2']
-target = 'G3'
-X = data[features]
-y = data[target]
+data_encoded = pd.get_dummies(data, drop_first=True)
+X = data_encoded.drop('G3', axis=1)
+y = data_encoded['G3']
+
 
 # Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
