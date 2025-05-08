@@ -6,11 +6,8 @@ This project was developed for the **CS432 - Artificial Intelligence** course an
 
 ## 📊 Objective
 
-Use machine learning to predict the final grade (**G3**) of students based on features like:
-- Weekly study time
-- Class failures
-- Absences
-- Grades from the first two periods (G1 and G2)
+Use machine learning to predict the final grade (G3) of students using all available features in the dataset, including academic records, demographics, and behavioral attributes.
+Categorical features were one-hot encoded to make them compatible with regression models.
 
 ---
 
@@ -26,13 +23,10 @@ Use machine learning to predict the final grade (**G3**) of students based on fe
 - **Source**: [UCI Machine Learning Repository – Student Performance Dataset](https://archive.ics.uci.edu/dataset/320/student+performance)
 - **File Used**: `student-mat.csv`
 - **Records**: 649 students
-- **Selected Features**:
-  - `studytime`
-  - `failures`
-  - `absences`
-  - `G1`, `G2` (grades from previous periods)
-  - `G3` (final grade - target)
-
+- **Features Used**:  
+  All available features in the dataset were included in training.  
+  Categorical variables (e.g., school, sex, address, etc.) were encoded using one-hot encoding.  
+  The target variable is `G3` (final grade).
 ---
 
 ## ⚙️ Tech Stack
@@ -48,8 +42,8 @@ Use machine learning to predict the final grade (**G3**) of students based on fe
 
 | Model             | MAE  | MSE  | R² Score |
 |------------------|------|------|----------|
-| Linear Regression | 1.34 | 4.47 | 78.22%   |
-| Decision Tree     | 1.04 | 2.25 | 89.03%   |
+| Linear Regression | 1.65 | 5.66 | 72.41%   |
+| Decision Tree     | 1.14 | 4.20 | 79.50%   |
 
 > ✅ The **Decision Tree Regressor** showed better accuracy and generalization.
 
